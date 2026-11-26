@@ -1,0 +1,33 @@
+# Secrets: never save these to GitHub
+.env
+.env.*
+!.env.example
+
+# Installed packages and build output
+node_modules/
+.next/
+out/
+build/
+dist/
+*.tsbuildinfo
+next-env.d.ts
+
+# Test output
+coverage/
+playwright-report/
+test-results/
+blob-report/
+playwright/.cache/
+
+# Tools
+.usability-tmp/
+.tmp-app/
+.vercel
+supabase/.temp/
+supabase/.branches/
+.claude/settings.local.json
+
+# System files
+.DS_Store
+Thumbs.db
+*.log
