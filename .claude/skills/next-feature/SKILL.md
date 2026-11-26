@@ -36,7 +36,7 @@ Then ask: "Does this match what you pictured?" **Wait for a yes** (or changes) b
 ## 4. Build it, test-first
 
 1. Write Playwright tests for every "done when" check first, plus the checks in HEURISTICS.md that apply. Run them and confirm they fail (nothing is built yet).
-2. Build the feature, following `DESIGN.md` and `HEURISTICS.md`. Handle loading, empty, success and error states in plain words.
+2. Build the feature from the usability kit (`docs/USABILITY-KIT.md`), following `DESIGN.md` and `HEURISTICS.md`: `PageHeader` with one main action, `Field` for every input, `useSaveAction` for saves, `ConfirmDialog` or `notify.undo` for deletes, `EmptyState` / `LoadingList` / `ErrorState` for each state, and `friendlyError` for every error shown.
 3. Database changes: write a migration file in `supabase/migrations/` with Row Level Security and policies, and apply it with the Supabase connector. Before `/go-live`, apply it to the only project. After `/go-live`, apply it **only to the test project** (see CLAUDE.md); the live project changes during `/merge-story`.
 4. Run the tests and `npm run check` until everything passes. Commit as you go with clear messages, and push the branch.
 

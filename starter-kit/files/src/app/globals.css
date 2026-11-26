@@ -1,0 +1,45 @@
+@import "tailwindcss";
+@import "../styles/theme.css";
+
+/* The look comes from theme.json (run `npm run theme` after changing it).
+   Build screens from src/components; don't add colors or fonts here. */
+
+@layer base {
+  html {
+    font-size: var(--text-base-size);
+  }
+
+  body {
+    background: var(--background);
+    color: var(--ink);
+    font-family: var(--font-body);
+    line-height: 1.55;
+  }
+
+  h1,
+  h2,
+  h3,
+  h4 {
+    font-family: var(--font-heading);
+    line-height: 1.2;
+    text-wrap: balance;
+  }
+
+  a {
+    color: var(--primary);
+  }
+
+  :focus-visible {
+    outline: 3px solid var(--primary);
+    outline-offset: 2px;
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    *,
+    *::before,
+    *::after {
+      animation-duration: 0.01ms !important;
+      transition-duration: 0.01ms !important;
+    }
+  }
+}

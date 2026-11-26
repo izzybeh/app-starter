@@ -23,11 +23,14 @@ Read `VISION.md`. Pick the app name it uses (or ask them for one if it has none)
 
 1. If `package.json` already exists, skip to Phase 4.
 2. `create-next-app` won't run in a folder that already has files, so create it in a temporary subfolder without its own Git repository or prompts:
-   `npx --yes create-next-app@latest .tmp-app --ts --tailwind --eslint --app --src-dir --use-npm --import-alias "@/*" --disable-git --skip-install --yes`
-   Then move everything from `.tmp-app` into this folder **except** `.git`, `node_modules`, `README.md` and `CLAUDE.md`. If it created an `AGENTS.md`, keep it and add a line `@AGENTS.md` near the top of our `CLAUDE.md`. Merge its `.gitignore` lines into ours, but keep our `.env` rules exactly as they are (`.env.example` must stay saveable). Delete `.tmp-app`, then run `npm install`.
-3. Install `@supabase/supabase-js` and `@supabase/ssr`, and set up the Supabase client helpers the way Supabase's current Next.js guide recommends (use the Supabase connector's documentation search if it's available).
-4. Replace the home page with a simple, friendly page that says "Hello from <app name>" and one line describing the app from VISION.md.
-5. Add `.env.example` with the variable names only (no values).
+   `npx --yes create-next-app@latest tmp-app --ts --tailwind --eslint --app --src-dir --use-npm --import-alias "@/*" --disable-git --skip-install --yes`
+   Then move everything from `tmp-app` into this folder **except** `.git`, `node_modules`, `README.md` and `CLAUDE.md`. If it created an `AGENTS.md`, keep it and add a line `@AGENTS.md` near the top of our `CLAUDE.md`. Merge its `.gitignore` lines into ours, but keep our `.env` rules exactly as they are (`.env.example` must stay saveable). Delete `tmp-app`, then run `npm install`.
+3. **Install the usability kit** (building blocks, theme and stricter checks). If `theme.json` is missing, show them the six looks (Calm, Warm, Fresh, Bold, Playful, Professional, one line each from `starter-kit/themes/presets.json`), recommend one that fits VISION.md, and write their choice as `{ "base": "<id>", "name": "<Name>" }`. Then run:
+   `node starter-kit/install.mjs --name "<app name>" --description "<one sentence from VISION.md>"`
+   When it finishes, delete the `starter-kit/` folder (everything it needs is now in the app, and its guide is in `docs/USABILITY-KIT.md`).
+4. Install `@supabase/supabase-js` and `@supabase/ssr`, and set up the Supabase client helpers the way Supabase's current Next.js guide recommends (use the Supabase connector's documentation search if it's available).
+5. The kit already made a friendly home page and a `/style-guide` page. Add `.env.example` with the variable names only (no values).
+6. Run `npm run typecheck`, `npm run lint`, `npm run format:check` and `npm run build`. Fix anything that fails.
 
 ## Phase 4: Connect to Supabase
 
@@ -37,7 +40,7 @@ Read `VISION.md`. Pick the app name it uses (or ask them for one if it has none)
 
 ## Phase 5: See it running
 
-Start the app (`npm run dev`) and open it in the preview so they can see the page. Ask them to confirm they can see "Hello from <app name>".
+Start the app (`npm run dev`) and open it in the preview so they can see the page. Ask them to confirm they can see "Hello from <app name>". Then open `/style-guide` and tell them: this is every building block of their app in their theme; they can change the look any time (`theme.json`).
 
 ## Phase 6: Save to GitHub
 

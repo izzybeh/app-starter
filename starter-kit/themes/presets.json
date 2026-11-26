@@ -1,0 +1,44 @@
+{
+  "calm": {
+    "name": "Calm",
+    "mood": "Clear, steady and trustworthy. Soft blue on light gray.",
+    "colors": { "background": "#f6f8fb", "surface": "#ffffff", "ink": "#16213a", "muted": "#566175", "border": "#d9dfe8", "primary": "#2453c9", "primaryInk": "#ffffff", "accent": "#e7eefc", "success": "#1c7146", "warning": "#8a5a00", "danger": "#bf2525" },
+    "radius": "10px",
+    "fonts": { "heading": "Inter", "body": "Inter" }
+  },
+  "warm": {
+    "name": "Warm",
+    "mood": "Homey and inviting, like a kitchen table. Terracotta on cream.",
+    "colors": { "background": "#fbf7f1", "surface": "#ffffff", "ink": "#2b1c14", "muted": "#67564a", "border": "#e8dccd", "primary": "#a64a22", "primaryInk": "#ffffff", "accent": "#f9e7db", "success": "#2e6b3a", "warning": "#8a5400", "danger": "#b3261e" },
+    "radius": "12px",
+    "fonts": { "heading": "Fraunces", "body": "Source Sans 3" }
+  },
+  "fresh": {
+    "name": "Fresh",
+    "mood": "Healthy, light and growing. Leafy green on white.",
+    "colors": { "background": "#f4f9f5", "surface": "#ffffff", "ink": "#11261b", "muted": "#4c6156", "border": "#d3e4d8", "primary": "#1b6f44", "primaryInk": "#ffffff", "accent": "#dff2e6", "success": "#1b6f44", "warning": "#865600", "danger": "#b42318" },
+    "radius": "12px",
+    "fonts": { "heading": "DM Sans", "body": "DM Sans" }
+  },
+  "bold": {
+    "name": "Bold",
+    "mood": "Modern, confident and sharp. Deep violet on crisp white.",
+    "colors": { "background": "#ffffff", "surface": "#f5f5f8", "ink": "#0e0e14", "muted": "#545468", "border": "#e0e0e8", "primary": "#4a26d1", "primaryInk": "#ffffff", "accent": "#ece7ff", "success": "#17703f", "warning": "#865300", "danger": "#c01c28" },
+    "radius": "6px",
+    "fonts": { "heading": "Space Grotesk", "body": "Inter" }
+  },
+  "playful": {
+    "name": "Playful",
+    "mood": "Friendly, upbeat and fun. Raspberry pink on warm white.",
+    "colors": { "background": "#fff9f2", "surface": "#ffffff", "ink": "#2a1832", "muted": "#675471", "border": "#f0ddd0", "primary": "#c2255c", "primaryInk": "#ffffff", "accent": "#ffe4ee", "success": "#24703a", "warning": "#875000", "danger": "#b3261e" },
+    "radius": "16px",
+    "fonts": { "heading": "Nunito", "body": "Nunito" }
+  },
+  "professional": {
+    "name": "Professional",
+    "mood": "Polished and serious, for money, health or work. Navy on cool gray.",
+    "colors": { "background": "#f4f5f7", "surface": "#ffffff", "ink": "#1a2330", "muted": "#566170", "border": "#d9dde3", "primary": "#1d3a60", "primaryInk": "#ffffff", "accent": "#e3eaf3", "success": "#1f6b45", "warning": "#835300", "danger": "#b42318" },
+    "radius": "6px",
+    "fonts": { "heading": "IBM Plex Sans", "body": "IBM Plex Sans" }
+  }
+}

@@ -57,7 +57,7 @@ Create the branch `feature/go-live` (from an up-to-date `main`) if it doesn't ex
 - A way for people to delete their account and their data. Do it without any secret admin key: a migration that adds a `delete_my_account()` database function (`security definer`, deleting from `auth.users` where `id = auth.uid()`), with the app's tables linked to users using `on delete cascade`. Test it with the test account in the test project.
 - A support contact (ask them which email address to show).
 
-Write tests for these like any feature.
+Write tests for these like any feature. Also ask whether to keep the `/style-guide` page on the live site (it's harmless, but not meant for users); if not, remove it from the live build while keeping it available locally.
 
 ## Phase G: Get told when something breaks
 

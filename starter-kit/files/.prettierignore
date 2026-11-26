@@ -1,0 +1,9 @@
+.next
+node_modules
+package-lock.json
+playwright-report
+test-results
+.usability-tmp
+supabase/.temp
+src/styles/theme.css
+*.md

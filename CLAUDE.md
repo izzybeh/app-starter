@@ -16,8 +16,17 @@ The person building this app has never written code before. They follow a step-b
 - App name: (filled in by /start-app)
 - What it is and who it's for: read `VISION.md`.
 - What to build, in order: `ROADMAP.md`.
-- How it should look and sound: `DESIGN.md`.
+- How it should look and sound: `theme.json` (the look) and `DESIGN.md` (how screens are built and the tone of voice).
 - How it must behave for people: `HEURISTICS.md` (Nielsen Norman Group's 10 usability heuristics, applied to this app).
+
+## Building blocks
+
+The app comes with a usability kit: `src/components/ui`, `src/components/patterns`, `src/hooks` and `src/lib`. It builds Nielsen Norman Group's 10 heuristics into the pieces themselves. Read `docs/USABILITY-KIT.md` before building any screen, and see every piece at `/style-guide`.
+
+- Build every screen from these pieces: `PageHeader` (one main action), `Field` + `Input`/`Select`/`Textarea`, `Button` (with `loading`), `useSaveAction` for saves, `ConfirmDialog` or `notify.undo` for deletes, `EmptyState`, `LoadingList`, `ErrorState`, `DateText`, `friendlyError`.
+- Use only theme colors (`bg-primary`, `text-ink`, `text-muted`, `bg-surface`…). The look changes only through `theme.json` and `npm run theme`; never edit `src/styles/theme.css` by hand.
+- Lint blocks raw `<button>`, `<input>`, `<select>`, `<textarea>`, fixed colors and `alert()` in screens. Fix the code; don't disable the rule.
+- If a screen needs something the kit doesn't have, add it to `src/components/` using theme colors, and show it on `/style-guide`.
 
 ## Stack
 
@@ -50,7 +59,7 @@ A story is done only when all of these are true. `/ship-story` checks them.
 1. Every "done when" check has a Playwright test, and it passes.
 2. `npm run check` passes (types, lint, unit tests, build).
 3. It works at phone size and the accessibility scan finds no serious problems.
-4. Loading, empty, success and error states are handled in plain words.
+4. Built from the usability kit; loading, empty, success and error states are handled in plain words.
 5. Database changes are migration files; every table has Row Level Security; the Supabase security advisor shows no new warnings. (Ignore warnings that can only be fixed on a paid plan; mention them once.)
 6. No secrets in the code.
 7. It follows `DESIGN.md`, and the usability review finds no problems rated 3 or 4.

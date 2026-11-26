@@ -8,22 +8,25 @@ Set up the automatic checks that every future feature must pass. The person does
 
 This takes a while, so work in phases. **Check what's already done and start at the first unfinished phase.** At the start, show a short checklist of the phases with ✓ for the ones already done. After each phase: commit, push to `main`, say in one sentence what the person now has, and ask whether to keep going or stop for today (they can run `/setup-quality` again later to continue). If the conversation is getting long, suggest starting a new session and running `/setup-quality` again.
 
-## Phase A: Choose the look → `DESIGN.md`
+## Phase A: Confirm the look → `DESIGN.md`
 
 Done if `DESIGN.md` exists.
 
-1. Ask them to paste 2 or 3 screenshots of apps or websites whose look they like (or describe the feel they want in a few words). Read VISION.md for who the users are.
-2. Build a temporary page at `/style-preview` showing two clearly different style options side by side (colors, fonts, buttons, a sample card and form). Open it in the preview and ask which they prefer, or what to change.
-3. Write `DESIGN.md`: colors (with exact values), fonts, text sizes, spacing, corner rounding, button styles, form styles, how success/error/empty/loading states look, and the tone of voice for on-screen words (with examples). Apply it to the existing home page. Delete the `/style-preview` page.
+1. Open `/style-guide` in the preview. Tell them which theme they're using (from `theme.json`) and ask: "Do you like this look? You can change the main color, the fonts, how rounded the corners are, or switch to larger text." Screenshots of apps they like are welcome but optional.
+2. Make any changes **only** through `theme.json` (see `docs/USABILITY-KIT.md` for the options), run `npm run theme`, and show `/style-guide` again. Repeat until they're happy. Never edit `src/styles/theme.css` or add colors anywhere else.
+3. Write `DESIGN.md`, short and specific to this app:
+   - The theme: name, base, colors, fonts, text size (from `theme.json`), and a line saying the look changes only through `theme.json`.
+   - Building blocks: "Build every screen from the usability kit (`docs/USABILITY-KIT.md`, `/style-guide`)", plus which patterns this app will use most, based on ROADMAP.md.
+   - Tone of voice: 3 to 5 rules for on-screen words that fit the people in VISION.md, each with a good and a bad example (button labels, success messages, empty screens, errors). Use the app's own words for things (from VISION.md), never technical ones.
 
 ## Phase B: Automatic checks
 
 Done if `package.json` has a `check` script and `playwright.config.*` exists.
 
-1. Turn on TypeScript strict mode. Make sure ESLint works with `npx eslint .` and add Prettier.
+1. Confirm TypeScript strict mode is on, and that `npm run lint`, `npm run typecheck` and `npm run format:check` pass (the kit set these up).
 2. Add Vitest for unit tests, with one small passing example test.
 3. Add Playwright with two projects, desktop Chrome and a phone (for example "Pixel 7"), and `@axe-core/playwright`. Add one end-to-end test that opens the home page and runs an accessibility scan that fails on serious or critical issues. Install the Playwright browsers.
-4. Add npm scripts: `typecheck`, `lint`, `test` (Vitest), `e2e` (Playwright), and `check` (typecheck + lint + test + build, in that order).
+4. Add npm scripts: `test` (Vitest), `e2e` (Playwright), and `check` (typecheck + lint + format:check + test + build, in that order).
 5. **A test login for automated tests.** Real sign-up emails can't be sent from tests, so tests log in with one test account instead. Have the person create it in Supabase: **Authentication → Users → Add user → Create new user**, any email and password, with **Auto Confirm User** on. Then have them add two lines to `.env.local` themselves (show them how to open it): `E2E_EMAIL=...` and `E2E_PASSWORD=...`. Add a Playwright setup project that logs in once with these and saves the session for other tests. Tests must never send real sign-up emails: for sign-up flows, only check the form and the "check your email" screen. Add both names (no values) to `.env.example`.
 6. Run `npm run check` and `npm run e2e`. Both must pass. Show them the passing summary and say: "Green means go."
 
@@ -52,7 +55,7 @@ Write `HEURISTICS.md` with one section per Nielsen Norman Group usability heuris
 9. Help users recognize, diagnose, and recover from errors
 10. Help and documentation
 
-For each, write 2 to 4 concrete, checkable rules **for this app** (use VISION.md and ROADMAP.md), each with a one-line pass example and fail example. Then add a "Severity scale" section: 0 not a problem, 1 cosmetic, 2 minor, 3 major (must fix before shipping), 4 catastrophe (must fix before shipping).
+For each, write 2 to 4 concrete, checkable rules **for this app** (use VISION.md and ROADMAP.md), each with a one-line pass example and fail example, and name the kit piece that handles it (see the table in `docs/USABILITY-KIT.md`). Then add a "Severity scale" section: 0 not a problem, 1 cosmetic, 2 minor, 3 major (must fix before shipping), 4 catastrophe (must fix before shipping).
 
 Then add Playwright helpers and tests for the rules a robot can check, to be reused by every feature: no raw error text ("undefined", "null", "NaN", stack traces, "Error:" codes) on screen; every form and dialog has a visible way to cancel or go back; double-clicking a submit button never saves twice; destructive actions ask for confirmation or offer undo. Keep them passing on the current app.
 

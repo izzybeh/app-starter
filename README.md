@@ -25,6 +25,7 @@ New here? Type `/whats-next`.
 ## What's inside
 
 - `CLAUDE.md`: house rules Claude follows in every session.
+- `starter-kit/`: the usability kit `/start-app` installs: building blocks with Nielsen Norman Group's 10 usability heuristics built in, six readable themes, and lint rules that keep every screen consistent.
 - `.claude/skills/`: the commands above.
 - `.claude/agents/usability-reviewer.md`: an independent reviewer that grades each screen against Nielsen Norman Group's 10 usability heuristics.
 - `.claude/hooks/`: safety checks that block saving secret keys to GitHub, force-pushing, and (after setup) changing the live version without a pull request.
