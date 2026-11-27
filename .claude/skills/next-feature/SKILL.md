@@ -16,7 +16,7 @@ Build one feature from the roadmap, start to finish, with the person approving t
 
 ## 2. Pick the story
 
-If a story number was given ($ARGUMENTS), use that story. Otherwise use the first unchecked story under "Now" in `ROADMAP.md`. If none are left, tell them the first version is complete, and suggest `/go-live` (if not done yet) or moving ideas from "Next" into "Now".
+If a story number was given ($ARGUMENTS), use that story. Otherwise use the first unchecked story under "Now" in `ROADMAP.md`. If none are left, tell them this round is complete, and suggest `/go-live` (if not done yet), or `/plan-roadmap` to plan the next round from feedback.
 
 Show the story and its "done when" checks, and say which number it is out of how many.
 

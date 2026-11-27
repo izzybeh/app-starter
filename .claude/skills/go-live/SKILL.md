@@ -70,4 +70,4 @@ Help them add free error alerts. Suggest Sentry's free plan: they sign up at htt
 
 ## Finish
 
-Tell them they're live and ready to invite their first users. Remind them to run `/backup` weekly, and that `/next-feature` keeps working for new features (move ideas from "Next" to "Now" in ROADMAP.md).
+Tell them they're live and ready to invite their first users. Remind them to run `/backup` weekly. Explain how they keep improving: share the app, save what people say with `/feedback`, and when the current round is done, run `/plan-roadmap` to plan the next round from that feedback.

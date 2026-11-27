@@ -10,12 +10,13 @@ Follow the step-by-step guide you were given. It tells you when to copy this tem
 | --- | --- |
 | `/whats-next` | Tells you where you are and what to do next |
 | `/start-app` | Builds your starter app and puts it online |
-| `/plan-roadmap` | Turns your vision into small features, in order |
+| `/plan-roadmap` | Turns your vision into small features, in order; run again to plan each next round |
 | `/setup-quality` | Turns on automatic checks (once) |
 | `/next-feature` | Plans and builds your next feature |
 | `/ship-story` | Checks the feature and gives you a preview link |
 | `/merge-story` | Puts a tested feature live |
 | `/go-live` | Your own domain, real email, privacy basics |
+| `/feedback` | Saves what people say about your app |
 | `/explain` | Explains anything in plain English |
 | `/unstuck` | Finds what's wrong without changing anything |
 | `/backup` | Saves a copy of your data to your computer |

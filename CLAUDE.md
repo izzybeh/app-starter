@@ -69,9 +69,10 @@ A story is done only when all of these are true. `/ship-story` checks them.
 
 - `/whats-next`: where am I, and what do I do now?
 - `/start-app`: build the starter app and put it online.
-- `/plan-roadmap`: turn the vision into a list of small features.
+- `/plan-roadmap`: turn the vision into a list of small features; run it again to plan each next round from feedback.
 - `/setup-quality`: turn on the automatic checks (run once).
 - `/next-feature`: plan and build the next feature.
+- `/feedback`: save what someone said about the app, for planning the next round.
 - `/ship-story`: check the feature and open a pull request with a preview link.
 - `/merge-story`: put a tested feature live.
 - `/go-live`: own domain, real email, test database, privacy basics.

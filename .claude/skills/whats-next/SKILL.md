@@ -18,6 +18,6 @@ Check, in this order, and stop at the first that applies:
 6. On `main`: read `ROADMAP.md`.
    - If any story under "Now" is unchecked → next is `/next-feature`. Name the story it will pick.
    - If every "Now" story is checked and the "Live project ID" in CLAUDE.md is still "(not set yet)" or no test project is recorded → next is `/go-live`.
-   - Otherwise → they're live. Suggest picking stories from "Next" (move them to "Now" in ROADMAP.md, then `/next-feature`), and running `/backup` weekly.
+   - Otherwise → they're live and this round is done. Check open feedback notes (`gh issue list --label feedback --state open --json number`). If there are any, next is `/plan-roadmap` to plan the next round from them. If there are none, next is sharing the app with a few people and saving what they say with `/feedback`. If the newest folder in `~/app-backups/<app-name>/` is more than 7 days old, or there isn't one, also suggest `/backup`.
 
 Answer in at most four short lines: where they are, what's done, and the exact command to type next.
